@@ -1,0 +1,177 @@
+body {
+  font-family: "Poppins", sans-serif;
+  color: #5f5f5f;
+  margin: 0;
+  overflow: hidden;
+}
+body.left {
+  cursor: w-resize;
+}
+body.left:hover:active {
+  cursor: w-resize 0 10;
+}
+body.right {
+  cursor: e-resize;
+}
+body.right:hover:active {
+  cursor: e-risize 0 10;
+}
+
+.temple {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.temple.left {
+  right: 100vw;
+  left: -100vw;
+}
+.temple.right {
+  right: -100vw;
+  left: 100vw;
+}
+.temple .temple-title {
+  cursor: initial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  user-select: none;
+  padding: 1rem 3rem;
+  background: none;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: background 0.4s, color 0.4s, width 0.4s, height 0.4s;
+  height: 152px;
+}
+.temple .temple-title.full-size {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #1a93fe;
+  color: white;
+}
+.temple .temple-title.provo-city-center-title {
+  width: 790px;
+}
+.temple .temple-title.provo-title {
+  width: 322px;
+}
+.temple .temple-title.salt-lake-city-title {
+  width: 618px;
+}
+.temple .temple-title:hover:not(.full-size) {
+  cursor: pointer;
+}
+.temple .temple-title:hover:not(.full-size):not(:active) {
+  background: #1a93fe;
+  color: white;
+}
+.temple .temple-title:hover:not(.full-size) ~ .click-hint {
+  opacity: 1;
+}
+.temple .temple-title .explosion {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  transform: scale(1);
+  border-radius: 50%;
+  animation-delay: 0ms;
+  background: #1a93fe;
+  z-index: -1;
+}
+.temple .temple-title .click-loading-circle {
+  position: fixed;
+  height: 80vh;
+  width: 80vh;
+  top: 10vh;
+  left: calc(50vw - 40vh);
+  stroke-dasharray: 2095px;
+  stroke-dashoffset: 2095px;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  display: block;
+  z-index: -1;
+  transition-property: stroke-dashoffset;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+  transition-duration: 2s;
+}
+.temple .temple-title:not(.full-size):active {
+  color: white;
+}
+.temple .temple-title:not(.full-size):active .explosion {
+  animation-name: color-explosion;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+.temple .temple-title:not(.full-size):active .click-loading-circle {
+  stroke-dashoffset: 0;
+  transition-duration: 2s;
+}
+.temple .click-hint {
+  opacity: 0;
+  transition: opacity 0.4s;
+  position: absolute;
+  margin-top: 100px;
+  user-select: none;
+}
+.temple .temple-image {
+  position: absolute;
+  bottom: 0;
+  display: inherit;
+  z-index: -1;
+}
+.temple .temple-image.provo-city-center-temple {
+  width: 130%;
+  height: 120%;
+}
+.temple .temple-image.provo-temple {
+  width: 140%;
+  height: 150%;
+}
+.temple .temple-image.salt-lake-city-temple {
+  width: 140%;
+  height: 150%;
+  bottom: -30%;
+}
+.temple .temple-image polygon {
+  stroke: #5f5f5f;
+  stroke-width: 0.4px;
+  animation: svg-animate 40s infinite ease-in-out;
+  transform: translate(0, 0);
+}
+
+@keyframes svg-animate {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-2px, -2px);
+  }
+  75% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes color-explosion {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1000);
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
