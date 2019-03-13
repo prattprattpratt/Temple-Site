@@ -32,7 +32,12 @@
   </div>
   <script>
     // initial scroll to center card
-    window.setTimeout(() => window.scroll(window.innerWidth, window.innerHeight), 100);
+    const templeCardsContainer = document.getElementsByClassName("temple-cards-container")[0];
+    window.setTimeout(() => {
+      const xCenter = (templeCardsContainer.clientWidth / 2) - (window.innerWidth / 2);
+      const yCenter = (templeCardsContainer.scrollHeight / 2) - (window.innerHeight / 2);
+      window.scroll(xCenter, yCenter);
+    }, 100);
 
     // prevent scrolling by any means other than clicking and dragging
 
