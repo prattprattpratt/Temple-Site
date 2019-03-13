@@ -1,0 +1,90 @@
+html, body {
+    margin: 0;
+}
+
+*, *::before {
+    transition: all 0.4s ease-in-out;
+}
+
+.header, .footer {
+    width: 100%;
+    height: 50px;
+    background: black;
+}
+
+.temple-names-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 4rem 0;
+    align-items: center;
+}
+.temple-names-list.open .temple-name:not(.open), .temple-names-list.open .temple-name:not(.open)::before {
+    pointer-events: none;
+}
+.hovered-list:not(.open) .temple-name {
+    margin-left: -70rem;
+}
+
+.temple-name {
+    margin: 3rem 0;
+    font-size: 6rem;
+    font-family: 'Major Mono Display', monospace;
+    cursor: pointer;
+    position: relative;
+}
+.temple-name::before {
+    content: "";
+    background: black;
+    position: absolute;
+    width: 0;
+    height: 4px;
+    left: 50%;
+    top: 50%;
+    transition: width 0.4s ease-in-out 0s, height 0.4s ease-in-out 0.4s, top 0.4s ease-in-out 0.4s;
+}
+.temple-name.open::before {
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out, top 0.4s ease-in-out, padding 0.4s ease-in-out, margin 0.4s ease-in-out;
+    width: 200vw !important;
+    height: 200vw !important;
+    top: 150px !important;
+    margin: 0 -100vw;
+}
+.temple-name.open {
+    position: absolute;
+    background: white;
+}
+.hovered-list .hovered-name {
+    margin-left: 0 !important;
+}
+.hovered-list .temple-name.hovered-name::before {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+}
+
+.temple-image {
+    position: absolute;
+    top: -80px;
+    right: -200px;
+}
+.temple-image.provo-city-center {
+    top: -110px;
+    left: 54.4%;
+    width: 300px;
+    height: 300px;
+}
+.temple-image polygon {
+    stroke: white;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+}
+.hovered-name:not(.open) .temple-image polygon {
+    animation: temple-draw-animation 3s cubic-bezier(0.665, 0.005, 0.360, 1.005) 0.8s infinite forwards;
+}
+
+@keyframes temple-draw-animation {
+    0% { stroke-dashoffset: 500; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 500; }
+}
