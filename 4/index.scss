@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: 'Cinzel Decorative', serif;
+  color: #979797;
+  cursor: grab;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .temple-cards-container {
+    width: 300vw;
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .temple-card {
+      margin: 1rem;
+      width: 346px;
+      height: 573px;
+      box-shadow: 7px 7px 34px #ccc;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      overflow: hidden;
+
+      .temple-card-header, .temple-card-footer {
+        height: 70px;
+        padding: 0.8rem 0 0 0.8rem;
+        box-sizing: border-box;
+      }
+
+      .temple-card-header {
+        svg {
+          height: 100%;
+        }
+      }
+
+      .temple-card-image {
+        display: flex;
+        justify-content: center;
+        flex: 5;
+
+        svg {
+          width: 85%;
+        }
+      }
+
+      .temple-card-text {
+        text-align: center;
+        flex: 2;
+
+        .temple-card-name, .temple-card-date {
+          margin: 0;
+        }
+
+        .temple-card-name {
+          text-decoration: overline;
+          text-transform: uppercase;
+          margin-top: 0.7rem;
+        }
+      }
+
+      .temple-card-footer {
+        background: #979797;
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.8rem;
+
+        .temple-card-number {
+          font-size: 2rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
