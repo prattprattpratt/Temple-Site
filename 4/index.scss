@@ -15,9 +15,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     
     .temple-card {
-      margin: 1rem;
+      margin: 10rem;
       width: 346px;
       height: 573px;
       box-shadow: 7px 7px 34px #ccc;
@@ -45,6 +46,7 @@ body {
 
         svg {
           width: 85%;
+          max-height: 50%;
         }
       }
 
@@ -60,6 +62,7 @@ body {
           text-decoration: overline;
           text-transform: uppercase;
           margin-top: 0.7rem;
+          font-size: 1.8rem;
         }
       }
 

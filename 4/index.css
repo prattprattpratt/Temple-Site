@@ -14,9 +14,10 @@ body .temple-cards-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 body .temple-cards-container .temple-card {
-  margin: 1rem;
+  margin: 10rem;
   width: 346px;
   height: 573px;
   box-shadow: 7px 7px 34px #ccc;
@@ -40,6 +41,7 @@ body .temple-cards-container .temple-card .temple-card-image {
 }
 body .temple-cards-container .temple-card .temple-card-image svg {
   width: 85%;
+  max-height: 50%;
 }
 body .temple-cards-container .temple-card .temple-card-text {
   text-align: center;
@@ -52,6 +54,7 @@ body .temple-cards-container .temple-card .temple-card-text .temple-card-name {
   text-decoration: overline;
   text-transform: uppercase;
   margin-top: 0.7rem;
+  font-size: 1.8rem;
 }
 body .temple-cards-container .temple-card .temple-card-footer {
   background: #979797;
