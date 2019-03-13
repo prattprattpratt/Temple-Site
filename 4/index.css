@@ -8,6 +8,20 @@ body {
 body:active {
   cursor: grabbing;
 }
+body .no-scroll-warning {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 2rem;
+  transition: all 0.4s;
+}
+body .no-scroll-warning.opacity-0 {
+  opacity: 0;
+}
 body .temple-cards-container {
   width: 300vw;
   height: 300vh;
@@ -15,6 +29,7 @@ body .temple-cards-container {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  transition: all 0.4s;
 }
 body .temple-cards-container .temple-card {
   margin: 10rem;
